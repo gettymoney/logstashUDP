@@ -30,12 +30,10 @@
     "node": ">=6.0"
   },
   "scripts": {
-    "codecheck": "eslint 'src/**/*.js' 'test/**/*.js'",
-    "prepublishOnly": "npm test",
+    "codecheck": "eslint src/*.js",
+    "prepublishOnly": "npm run codecheck",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "pretest": "npm run codecheck",
-    "clean": "rm -rf lib/ node_modules/",
-    "test": "nyc --check-coverage --lines 100 mocha"
+    "clean": "rm -rf lib/ node_modules/"
   },
   "directories": {
     "test": "test",
