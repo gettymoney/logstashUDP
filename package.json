@@ -1,0 +1,116 @@
+{
+  "name": "@gettymoney/logstashudp",
+  "version": "1.0.0",
+  "description": "Logstash UDP Appender for log4js-node",
+  "homepage": "https://log4js-node.github.io/log4js-node/",
+  "files": [
+    "src",
+    "types"
+  ],
+  "keywords": [
+    "logging",
+    "log",
+    "log4j",
+    "node",
+    "logstash",
+    "udp"
+  ],
+  "license": "Apache-2.0",
+  "main": "./src/index.js",
+  "types": "./types/index.d.ts",
+  "author": "gettymoney<gettymoney@pm.me>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gettymoney/logstashUDP.git"
+  },
+  "bugs": {
+    "url": "http://github.com/gettymoney/logstashUDP/issues"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "scripts": {
+    "codecheck": "eslint 'src/**/*.js' 'test/**/*.js'",
+    "prepublishOnly": "npm test",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "pretest": "npm run codecheck",
+    "clean": "rm -rf lib/ node_modules/",
+    "test": "nyc --check-coverage --lines 100 mocha"
+  },
+  "directories": {
+    "test": "test",
+    "src": "src"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^6.1.3",
+    "eslint": "^5.16.0",
+    "husky": "^0.14.3",
+    "mocha": "^5.0.4",
+    "nyc": "^14.1.1",
+    "proxyquire-2": "^1.0.7"
+  },
+  "browser": {
+    "os": false
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": false,
+      "node": true,
+      "es6": true,
+      "mocha": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 8
+    },
+    "rules": {
+      "no-undef": "error",
+      "prefer-const": "error",
+      "indent": [
+        "error",
+        2
+      ],
+      "max-len": [
+        "error",
+        {
+          "code": 120
+        }
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always",
+        {
+          "omitLastInOneLineBlock": true
+        }
+      ],
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "object-curly-spacing": [
+        "error",
+        "never"
+      ],
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "never"
+        }
+      ]
+    }
+  }
+}
